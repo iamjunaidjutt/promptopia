@@ -91,7 +91,11 @@ pnpm install
 
 ### 3. Environment Configuration
 
-Create a `.env` (or `.env.local`) file in the root directory:
+Copy the example environment file and fill in your credentials:
+
+```bash
+cp .env.example .env.local
+```
 
 ```env
 # MongoDB Connection String
