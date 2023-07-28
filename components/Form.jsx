@@ -1,4 +1,6 @@
+"use client";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function Form({
 	type,
@@ -17,7 +19,10 @@ export default function Form({
 				imagination run wild with any AI-powered platform.
 			</p>
 
-			<form
+			<motion.form
+				initial={{ opacity: 0, x: 200 }}
+				animate={{ opacity: 1, x: 0 }}
+				transition={{ duration: 0.5, delay: 0.4, type: "tween" }}
 				onSubmit={handleSubmit}
 				className="mt-10 w-full max-w-2xl flex flex-col gap-7 glassmorphism"
 			>
@@ -65,7 +70,7 @@ export default function Form({
 						{submitting ? `${type}...` : type}
 					</button>
 				</div>
-			</form>
+			</motion.form>
 		</section>
 	);
 }
